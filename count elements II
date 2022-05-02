@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int n, m;
+	cin >> n >> m;
+	unordered_set<int>a, b;
+	for (int i = 0; i < n; i++) {
+		int t; cin >> t;
+		a.insert(t);
+	}
+	for (int i = 0; i < m; i++) {
+		int t; cin >> t;
+		b.insert(t);
+	}
+	int count = 0;
+	for (auto x : a) {
+		int flag = 1;
+		for (auto y : b) {
+			if (x == y) {
+				flag = 0; break;
+			}
+		}
+		if (flag) count++;
+	}
+	for (auto x : b) {
+		int flag = 1;
+		for (auto y : a) {
+			if (x == y) {
+				flag = 0; break;
+			}
+		}
+		if (flag) count++;
+	}
+	cout << count << endl;
+	
+}
