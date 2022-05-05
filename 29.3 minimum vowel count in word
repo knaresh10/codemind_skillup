@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int bro(string s) {
+	int count = 0;
+	for (auto x : s) {
+		if (x == 'a' or x == 'e' or x == 'i' or x == 'o' or x == 'u') count++;
+	}
+	return count;
+}
+int main() {
+	string s;
+	cin >> s;
+	int min = bro(s);
+	while (cin >> s) {
+		int c = bro(s);
+		if (min > c) {
+			min = c;
+		}
+	}
+	cout << min;
+}
