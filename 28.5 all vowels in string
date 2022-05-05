@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	int a=0,e=0,i=0,o=0,u=0;
+	int A=0,E=0,I=0,O=0,U=0;
+	getline(cin,s);
+	for(auto x : s) {
+		if(x=='a') a++;
+		else if(x=='e') e++;
+		else if(x=='i') i++;
+		else if(x=='o') o++;
+		else if(x=='u') u++;
+		else if(x=='A') A++;
+		else if(x=='E') E++;
+		else if(x=='I') I++;
+		else if(x=='O') O++;
+		else if(x=='U') U++;
+	}
+	if(a!=0 and e!=0 and i!=0 and o!=0 and u!=0 or A!=0 and E!=0 and I!=0 and O!=0 and U!=0) cout << "True";
+	else cout << "False";
+}
