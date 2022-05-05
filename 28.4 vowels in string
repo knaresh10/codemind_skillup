@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	getline(cin, s);
+	vector<char> ch;
+	for (auto x : s) {
+		if (x == 'a' or x == 'A' or x == 'e' or x == 'E' or  x == 'i' or x == 'I' or x == 'o' or x == 'O' or x == 'u' or x == 'U' ) {
+			int flag = 1;
+			for (auto y : ch) {
+				if (x == y) {
+					flag = 0;
+					break;
+				}
+			}
+			if (flag) ch.push_back(x);
+		}
+	}
+	for (auto x : ch) cout << x << " ";
+	if (ch.empty()) cout << -1;
+}
