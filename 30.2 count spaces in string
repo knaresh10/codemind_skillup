@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	getline(cin,s);
+	int spaces = 0;
+	for(auto x : s) if(x==' ') spaces++;
+	cout << spaces;
+}
