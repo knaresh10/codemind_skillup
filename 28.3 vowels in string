@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	int flag = 1;
+	getline(cin,s);
+	char ch; cin >> ch;
+	for(int i=0;i<s.size();i++) {
+		if(s[i]==ch) {
+			flag = 0;
+			cout << "True" << endl << i;
+			break;
+		}
+	}
+	if(flag) cout << "False";
+}
