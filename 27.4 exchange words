@@ -1,0 +1,8 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	vector<string> v;
+	while (cin >> s) v.push_back(s);
+	for (auto it = v.rbegin(); it != v.rend(); it++) cout << *it << " ";
+}
