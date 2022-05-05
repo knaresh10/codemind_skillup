@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+string reverse(string s) {
+	string rev = "";
+	for (int i = s.length() - 1; i >= 0; i--) rev += s[i];
+	return rev;
+}
+int main() {
+	string s;
+	vector<string> v;
+	while (cin >> s) v.push_back(s);
+	for (auto it = v.rbegin(); it != v.rend(); it++) cout << reverse(*it) << " ";
+}
