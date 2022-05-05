@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	getline(cin,s);
+	int min = -1;
+	int len = 0;
+	for(char c : s) {
+		if(c==' ') {
+		    if(min==-1) min = len;
+			else if(len<min) min = len;
+			len = 0;
+		}
+		else len++;
+	}
+	if(min==-1) min = len;
+	cout << min;
+}
