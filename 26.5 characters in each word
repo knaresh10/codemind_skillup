@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	getline(cin,s);
+	int len = 0;
+	for(char c : s) {
+		if(c==' ') {
+		    cout << len << " ";
+		    len =0;
+		}
+		else len++;
+	}
+	if(len!=0) cout << len;
+}
