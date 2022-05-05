@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	getline(cin, s);
+	int scount = 0;
+	for (auto x : s) if ((x<'A' or x>'Z') and (x<'a' or x>'z') and x != ' ') scount++;
+	cout << scount;
+}
