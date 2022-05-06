@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	while (cin >> s) {
+	}
+	int lower[26] = {0}, upper[26] = {0};
+	for (auto x : s) {
+		if (x >= 'a' and x <= 'z') lower[x - 'a'] = 1;
+		else upper[x - 'A'] = 1;
+	}
+	for (int i = 0; i < 26; i++) {
+		if (lower[i] and upper[i]) {
+			cout << (char)(i + 'a');
+			break;
+		}
+		else if (lower[i]) {
+			cout << (char)(i + 'a');
+			break;
+		}
+		else if (upper[i]) {
+			cout << (char)(i + 'A');
+			break;
+		}
+	}
+}
