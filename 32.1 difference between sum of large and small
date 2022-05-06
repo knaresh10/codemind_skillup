@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	int large = 0;
+	int small = 0;
+	while (cin >> s) {
+		int max = -1;
+		int min = 275;
+		for (auto x : s) {
+			int ascii = x;
+			if (min > ascii) min = ascii;
+			if (max < ascii) max = ascii;
+		}
+		large += max;
+		small += min;
+	}
+	cout << large - small;
+}
