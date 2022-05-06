@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	while (cin >> s) {
+		int l[26] = {0};
+		for (auto x : s) {
+			if (x == ' ') continue;
+			if (x >= 'a' and x <= 'z') l[x - 'a']++;
+		}
+		for (int i = 0; i < 26; i++) {
+			if (l[i]) {
+				cout << (char)(i + 'a') << ' ';
+				break;
+			}
+		}
+		for (int i = 25; i > -1; i--) {
+			if (l[i]) {
+				cout << (char)(i + 'a') << " ";
+				break;
+			}
+		}
+	}
+}
