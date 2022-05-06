@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool islength(string a, string b) {
+	if (a.length() == b.length()) {
+		for (int i = 0; i < a.size(); i++) {
+			if (a[i] < b[i]) return true;
+			else if (a[i] > b[i]) return false;
+		}
+	}
+	return a.length() < b.length();
+}
+int main() {
+	string s;
+	vector<string> v;
+	while(cin >> s) v.push_back(s);
+	sort(v.begin(), v.end(), islength);
+	for (auto x : v) cout << x << " ";
+}
