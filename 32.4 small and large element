@@ -3,47 +3,10 @@ using namespace std;
 int main() {
 	string s;
 	cin >> s;
-	int u[26] = {0}, l[26] = {0};
-	for (auto x : s) {
-		if (x == ' ') continue;
-		if (x >= 'a' and x <= 'z') l[x - 'a']++;
-		else u[x - 'A']++;
-	}
-	int flag = 1;
-	for (int i = 0; i < 26; i++) {
-		if (u[i]) {
-			cout << (char)(i + 'A') << ' ';
-			flag = 0;
-			break;
-		}
-	}
-	for (int i = 0; i < 26 and flag ; i++) {
-		if (l[i]) {
-			cout << (char)(i + 'a') << ' ';
-			break;
-		}
-	}
+	char min = 'z';
+	for (auto x : s) if (min > x) min = x;
 	while (cin >> s) {}
-	int la[26] = {0}, ua[26] = {0};
-	for (auto x : s) {
-		if (x == ' ') continue;
-		if (x >= 'a' and x <= 'z') la[x - 'a']++;
-		else ua[x - 'A']++;
-	}
-	flag = 0;
-	for (int i = 25; i > -1; i--) {
-		if (la[i]) {
-			cout << (char)(i + 'a') << ' ';
-			flag = 0;
-			break;
-		}
-	}
-	for (int i = 25; i > -1 and flag ; i--) {
-		if (ua[i]) {
-			cout << (char)(i + 'A') << ' ';
-			flag = 0;
-			break;
-		}
-	}
-
+	char max = 'A';
+	for (auto x : s) if (max < x) max = x;
+	cout << min << " " <<  max;
 }
