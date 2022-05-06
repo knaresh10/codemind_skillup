@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	while (cin >> s) {
+		int max = 'A' , min = 'z';
+		for (auto x : s) {
+			//cout << (int) x << " ";
+			if (max < x) max = x;
+			if (min > x) min = x;
+		}
+		cout << abs(min - max) << " ";
+
+	}
+}
