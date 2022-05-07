@@ -19,3 +19,27 @@ int main() {
 		cout << s << " ";
 	}
 }
+
+
+#include<bits/stdc++.h>
+using namespace std;
+bool isvowel(char x) {
+	if (x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') return true;
+	return false;
+}
+int main() {
+	string s;
+	while (cin >> s) {
+		string temp = "";
+		for (auto x : s) if (!isvowel(x)) temp += x;
+		sort(temp.begin(), temp.end());
+		int ptr = 0;
+		for (int i = 0; i < s.size(); i++) {
+			if (isvowel(s[i])) continue;
+			else {
+				s[i] = temp[ptr++];
+			}
+		}
+		cout << s << " ";
+	}
+}
