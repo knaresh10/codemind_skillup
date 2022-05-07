@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	string s;
+	getline(cin , s);
+	int l[26] = {0}, u[26] = {0};
+	for (auto x : s) {
+		if (isupper(x)) u[x - 'A']++;
+		else if (islower(x)) l[x - 'a']++;
+	}
+	int flag = 1;
+	for (int i = 0; i < s.size(); i++) {
+		if (isupper(s[i])) {
+			int ch = s[i] - 'A';
+			if (u[ch] == 1 and !l[ch]) {
+				cout << s[i];
+				flag = 0;
+				break;
+			}
+		}
+		else if (islower(s[i])) {
+			int ch = s[i] - 'a';
+			if (l[ch] == 1 and !u[ch]) {
+				cout << s[i];
+				flag = 0;
+				break;
+			}
+		}
+	}
+	if (flag) cout << -1;
+}
