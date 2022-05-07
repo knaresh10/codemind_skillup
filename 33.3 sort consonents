@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool isvowel(char x) {
+	if (x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') return true;
+	return false;
+}
+int main() {
+	string s;
+	while (cin >> s) {
+		int letters[26] = {0};
+		for (auto x : s) letters[x - 'a']++;
+		int j = 0;
+		for (int i = 0; i < s.size(); i++) {
+			if (isvowel(s[i])) continue;
+			else while (isvowel((char)(j + 'a')) or letters[j] == 0 ) j++;
+			s[i] = (char)(j + 'a');
+			letters[j]--;
+		}
+		cout << s << " ";
+	}
+}
